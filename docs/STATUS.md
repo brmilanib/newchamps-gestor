@@ -37,14 +37,26 @@ _Atualizado em 2026-09-13 · Fase 1 em andamento (parte 1 de N)._
 - Estrutura de fila/eventos rodando com os agentes determinísticos Ingestão e Oportunidades.
 - CI (GitHub Actions: lint + typecheck + test + build) e deploy no Vercel.
 
+## ☁️ Infra no ar
+
+- **GitHub:** https://github.com/brmilanib/newchamps-gestor (main sincronizado).
+- **Supabase:** projeto `newchamps-gestor` (ref `tjurcifqezmhmnegquaq`, região sa-east-1),
+  criado no plano grátis (R$0). **Migrations 0001–0005 aplicadas** — 36 tabelas, 13 agentes
+  e 33 ferramentas no banco. Linter de segurança: erro de RLS corrigido; restam 2 avisos
+  benignos (funções `current_org_id`/`is_admin` executáveis por logados — necessário pras
+  policies). Tipos TypeScript do banco gerados em `src/lib/database.types.ts`.
+- **Vercel:** ainda não (entra quando as telas estiverem prontas pra deploy).
+
 ## ⏳ Depende de você
 
-- **GitHub:** criar o repositório privado `newchamps-gestor` e me passar o link (aqui não
-  tem `gh` e o conector caiu). Por ora o versionamento é **git local** — nada se perde.
-- **Supabase e Vercel:** criar os projetos novos (posso criar por MCP com sua confirmação,
-  já que criar projeto pode ter custo) quando a fundação estiver pronta pra subir.
-- **Fotos dos produtos:** de onde vêm hoje (URL na planilha / pasta / API do ML)?
-- **Funcionários:** começar só com você ou já cadastrar 1-2 pessoas?
+- **service_role key do Supabase:** pegar no painel (Project Settings → API) e me passar,
+  ou colocar você mesmo no `.env.local`/no servidor — é a chave do worker (Fase 3). Não é
+  urgente agora.
+- **E-mails da equipe:** pra criar os logins de verdade (cada pessoa loga por e-mail). Vou
+  cadastrar Ítalo, Isabela, Maria Fernanda, Marcela, Gabriela como colaboradores assim que
+  a tela de login existir e você me passar os e-mails.
+- **Fotos dos produtos:** a equipe vai subir — vou preparar upload de foto por produto
+  (Supabase Storage). Sem fonte externa.
 
 ## 📌 Decisões registradas
 
