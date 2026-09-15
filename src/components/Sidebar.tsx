@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import {
   Home, MessageSquare, BarChart3, Target, GitCompare, FolderTree, Barcode, Database,
   Upload, Radar, LineChart, Package, Send, ImageIcon, FlaskConical, Bell, Bot,
-  CalendarCheck, Settings, Tv, Users2,
+  CalendarCheck, Settings, Tv, Users2, ListOrdered,
 } from "lucide-react";
 
 type Item = { href: string; label: string; icon: React.ComponentType<{ size?: number }>; pronto?: boolean };
@@ -28,6 +28,7 @@ const GRUPOS: Grupo[] = [
       { href: "/concorrencia/categorias", label: "Por Categoria", icon: FolderTree, pronto: true },
       { href: "/concorrencia/gtin", label: "Produtos por GTIN", icon: Barcode, pronto: true },
       { href: "/concorrencia/dados-brutos", label: "Dados Brutos", icon: Database, pronto: true },
+      { href: "/concorrencia/priorizacao", label: "Priorização de Entrada", icon: ListOrdered, pronto: true },
       { href: "/concorrencia/upload", label: "Upload de dados", icon: Upload, pronto: true },
       { href: "/concorrencia/monitoramento", label: "Monitoramento", icon: Radar },
     ],

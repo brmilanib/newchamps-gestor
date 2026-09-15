@@ -814,9 +814,12 @@ export type Database = {
           n_vendedores: number | null
           onda_entrada: number | null
           organization_id: string
+          pct_catalogo: number | null
           posicionamento: string | null
           receita: number | null
+          saturacao: string | null
           score_priorizacao: number | null
+          tendencia: string | null
           tendencia_pct: number | null
           ticket_medio: number | null
           unidades: number | null
@@ -831,9 +834,12 @@ export type Database = {
           n_vendedores?: number | null
           onda_entrada?: number | null
           organization_id: string
+          pct_catalogo?: number | null
           posicionamento?: string | null
           receita?: number | null
+          saturacao?: string | null
           score_priorizacao?: number | null
+          tendencia?: string | null
           tendencia_pct?: number | null
           ticket_medio?: number | null
           unidades?: number | null
@@ -848,9 +854,12 @@ export type Database = {
           n_vendedores?: number | null
           onda_entrada?: number | null
           organization_id?: string
+          pct_catalogo?: number | null
           posicionamento?: string | null
           receita?: number | null
+          saturacao?: string | null
           score_priorizacao?: number | null
+          tendencia?: string | null
           tendencia_pct?: number | null
           ticket_medio?: number | null
           unidades?: number | null
