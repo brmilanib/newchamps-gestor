@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import {
   Home, MessageSquare, BarChart3, Target, GitCompare, FolderTree, Barcode, Database,
   Upload, Radar, LineChart, Package, Send, ImageIcon, FlaskConical, Bell, Bot,
-  CalendarCheck, Settings, Tv,
+  CalendarCheck, Settings, Tv, Users2,
 } from "lucide-react";
 
 type Item = { href: string; label: string; icon: React.ComponentType<{ size?: number }>; pronto?: boolean };
@@ -54,7 +54,8 @@ const GRUPOS: Grupo[] = [
     itens: [
       { href: "/agentes", label: "Agentes", icon: Bot },
       { href: "/revisoes", label: "Revisões", icon: CalendarCheck },
-      { href: "/configuracoes", label: "Configurações", icon: Settings },
+      { href: "/configuracoes/usuarios", label: "Usuários", icon: Users2, pronto: true },
+      { href: "/configuracoes", label: "Configurações", icon: Settings, pronto: true },
     ],
   },
 ];

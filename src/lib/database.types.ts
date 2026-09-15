@@ -1,5 +1,5 @@
 // Tipos gerados do banco Supabase (projeto newchamps-gestor).
-// NÃO editar à mão — regerar com: supabase gen types (ou o MCP generate_typescript_types).
+// NÃO editar à mão — regerar com o MCP generate_typescript_types.
 
 export type Json =
   | string
@@ -1791,6 +1791,15 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      criar_usuario_equipe: {
+        Args: {
+          p_email: string
+          p_nome: string
+          p_papel: string
+          p_senha: string
+        }
+        Returns: string
+      }
       current_org_id: { Args: never; Returns: string }
       is_admin: { Args: never; Returns: boolean }
     }
