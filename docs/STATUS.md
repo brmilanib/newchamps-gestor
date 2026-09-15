@@ -1,6 +1,17 @@
 # STATUS
 
-_Atualizado em 2026-09-13 · Fase 1 em andamento (parte 1 de N)._
+_Atualizado em 2026-09-14 · Fase 1 em andamento (parte 2)._
+
+## 🚀 No ar
+
+- **App publicado:** https://newchamps-gestor.vercel.app (Vercel, produção, deploy automático a cada push no `main`).
+- **Login funcionando** (Supabase Auth). Admin inicial: `brmilani@gmail.com` (senha temporária — trocar).
+- **Verificado ao vivo:** login, barra lateral + seletor de loja, tela Hoje, Painel de Agentes
+  (13 agentes com nome/função/especialidade), telas de Concorrência (estado vazio guiando ao upload),
+  proteção de rota (redireciona pro /login).
+- **Upload de concorrente** implementado (parse + ingestão + consolidação GTIN inline, idempotente).
+- 7 lojas cadastradas (Essence Prime, Purehome, Aurascent, Pure Perfumaria, Sillage, Kronix, Hubtoys).
+
 
 ## ✅ Pronto nesta entrega (fundação + núcleo de dados)
 
@@ -28,14 +39,13 @@ _Atualizado em 2026-09-13 · Fase 1 em andamento (parte 1 de N)._
 
 ## 🔜 Próximo na Fase 1 (próximas sessões)
 
-- Rotas de upload (concorrente, Nubmetrics, estoque/vendas) gravando no banco + tela de
-  auditoria (linhas processadas/rejeitadas, exportável).
-- As 6 telas de Concorrência (Resumo, Oportunidades, Comparativo, Por Categoria, GTIN,
-  Dados Brutos) com filtro/busca, lendo do banco.
+- Upload de Nubmetrics e de estoque/vendas (concorrente já está pronto) + tela de auditoria
+  dos uploads (linhas processadas/rejeitadas, exportável).
 - Módulo Estoque & Gestor Seller: upload, Top 10/ruptura, e geração do `import__4_.xlsx`.
-- Autenticação (Supabase Auth) + cadastro de funcionários + seletor de loja no topo.
-- Estrutura de fila/eventos rodando com os agentes determinísticos Ingestão e Oportunidades.
-- CI (GitHub Actions: lint + typecheck + test + build) e deploy no Vercel.
+- Tela de Configurações → cadastro de funcionários (Ítalo, Isabela, Maria Fernanda, Marcela,
+  Gabriela) — precisa dos e-mails.
+- CI (GitHub Actions: lint + typecheck + test + build).
+- Mover a ingestão/consolidação pro worker do servidor (hoje roda inline no upload).
 
 ## ☁️ Infra no ar
 
