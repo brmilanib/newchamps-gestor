@@ -24,6 +24,7 @@ export async function getAnuncios(orgId: string): Promise<AnuncioConcorrente[]> 
       .from("competitor_listings")
       .select("*")
       .in("competitor_id", ids)
+      .order("id", { ascending: true }) // ordenação estável: sem isso a paginação repete/pula linhas
       .range(from, from + pagina - 1);
     if (error) throw error;
     if (!data || data.length === 0) break;
