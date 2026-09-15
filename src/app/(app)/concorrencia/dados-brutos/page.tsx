@@ -1,19 +1,22 @@
 import Link from "next/link";
 import { getSessao } from "@/lib/data/sessao";
-import { getConcorrentes } from "@/lib/data/concorrencia";
+import { getConcorrentes, getMeses } from "@/lib/data/concorrencia";
 import { createClient } from "@/lib/supabase/server";
 import { PageHeader, Card, fmtBRL, fmtNum } from "@/components/ui";
+import { PeriodoSelect } from "@/components/PeriodoSelect";
 
 const POR_PAGINA = 50;
 
 export default async function DadosBrutosPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string; conc?: string; p?: string }>;
+  searchParams: Promise<{ q?: string; conc?: string; p?: string; mes?: string }>;
 }) {
-  const { q, conc, p } = await searchParams;
+  const { q, conc, p, mes } = await searchParams;
   const { organizationId } = await getSessao();
   const concorrentes = organizationId ? await getConcorrentes(organizationId) : [];
+  const meses = organizationId ? await getMeses() : [];
+  const mesAtual = mes ?? meses[0];
   const pagina = Math.max(1, Number(p) || 1);
   const de = (pagina - 1) * POR_PAGINA;
 
@@ -27,6 +30,7 @@ export default async function DadosBrutosPage({
     .order("vendas_reais", { ascending: false })
     .range(de, de + POR_PAGINA - 1);
 
+  if (mesAtual) query = query.eq("data_referencia", mesAtual);
   if (q?.trim()) query = query.ilike("titulo", `%${q.trim()}%`);
   if (conc?.trim()) query = query.eq("competitors.nome", conc.trim());
 
@@ -43,6 +47,7 @@ export default async function DadosBrutosPage({
     const u = new URLSearchParams();
     if (q) u.set("q", q);
     if (conc) u.set("conc", conc);
+    if (mesAtual) u.set("mes", mesAtual);
     u.set("p", String(np));
     return `?${u.toString()}`;
   };
@@ -53,8 +58,10 @@ export default async function DadosBrutosPage({
         titulo="Dados Brutos"
         descricao="Todos os anúncios importados, linha a linha. É o audit trail — confiável e filtrável."
       />
+      <PeriodoSelect meses={meses} />
 
       <form className="mb-4 flex flex-wrap items-center gap-3">
+        {mesAtual && <input type="hidden" name="mes" value={mesAtual} />}
         <input
           name="q"
           defaultValue={q ?? ""}

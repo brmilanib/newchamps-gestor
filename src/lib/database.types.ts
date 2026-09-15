@@ -1802,6 +1802,12 @@ export type Database = {
       }
       current_org_id: { Args: never; Returns: string }
       is_admin: { Args: never; Returns: boolean }
+      meses_concorrencia: {
+        Args: never
+        Returns: {
+          mes: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never

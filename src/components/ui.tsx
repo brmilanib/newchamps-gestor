@@ -82,3 +82,11 @@ export const fmtBRL = (n: number) =>
   n.toLocaleString("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 });
 export const fmtNum = (n: number) => n.toLocaleString("pt-BR");
 export const fmtPct = (n: number) => `${(n * 100).toLocaleString("pt-BR", { maximumFractionDigits: 1 })}%`;
+
+/** "2026-08-01" → "ago/2026" */
+export function fmtMes(iso: string): string {
+  const [ano, mes] = iso.split("-");
+  const nomes = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+  const i = Number(mes) - 1;
+  return `${nomes[i] ?? mes}/${ano}`;
+}

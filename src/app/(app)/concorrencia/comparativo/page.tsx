@@ -1,13 +1,16 @@
 import { getSessao } from "@/lib/data/sessao";
-import { getAnuncios } from "@/lib/data/concorrencia";
+import { getAnuncios, getMeses } from "@/lib/data/concorrencia";
 import { porMarca } from "@/lib/domain/agregacao";
 import { estaNoMix } from "@/lib/domain/mix";
 import { CRITERIOS_PADRAO } from "@/lib/domain/criterios";
 import { PageHeader, Card, Badge, fmtBRL, fmtNum } from "@/components/ui";
+import { PeriodoSelect } from "@/components/PeriodoSelect";
 
-export default async function ComparativoPage() {
+export default async function ComparativoPage({ searchParams }: { searchParams: Promise<{ mes?: string }> }) {
+  const { mes } = await searchParams;
   const { organizationId } = await getSessao();
-  const anuncios = organizationId ? await getAnuncios(organizationId) : [];
+  const meses = organizationId ? await getMeses() : [];
+  const anuncios = organizationId ? await getAnuncios(organizationId, mes ?? meses[0]) : [];
   const concs = [...new Set(anuncios.map((a) => a.concorrente))].sort();
   const marcas = porMarca(anuncios, CRITERIOS_PADRAO);
 
@@ -17,6 +20,7 @@ export default async function ComparativoPage() {
         titulo="Comparativo de Marcas"
         descricao={`Todas as ${fmtNum(marcas.length)} marcas lado a lado, receita em cada concorrente.`}
       />
+      <PeriodoSelect meses={meses} />
 
       {marcas.length === 0 ? (
         <Card className="border-dashed">

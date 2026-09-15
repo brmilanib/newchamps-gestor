@@ -1,14 +1,17 @@
 import Link from "next/link";
 import { getSessao } from "@/lib/data/sessao";
-import { getAnuncios } from "@/lib/data/concorrencia";
+import { getAnuncios, getMeses } from "@/lib/data/concorrencia";
 import { porMarca } from "@/lib/domain/agregacao";
 import { estaNoMix } from "@/lib/domain/mix";
 import { CRITERIOS_PADRAO } from "@/lib/domain/criterios";
 import { PageHeader, Card, Badge, fmtBRL, fmtNum } from "@/components/ui";
+import { PeriodoSelect } from "@/components/PeriodoSelect";
 
-export default async function OportunidadesPage() {
+export default async function OportunidadesPage({ searchParams }: { searchParams: Promise<{ mes?: string }> }) {
+  const { mes } = await searchParams;
   const { organizationId } = await getSessao();
-  const anuncios = organizationId ? await getAnuncios(organizationId) : [];
+  const meses = organizationId ? await getMeses() : [];
+  const anuncios = organizationId ? await getAnuncios(organizationId, mes ?? meses[0]) : [];
   const oportunidades = porMarca(anuncios, CRITERIOS_PADRAO).filter((m) => m.ehOportunidade);
 
   return (
@@ -17,6 +20,7 @@ export default async function OportunidadesPage() {
         titulo="Oportunidades"
         descricao={`Marcas com ticket médio ≥ ${fmtBRL(CRITERIOS_PADRAO.oportunidadeTicketMin)} e ≥ ${CRITERIOS_PADRAO.oportunidadeUnidadesMin} unidades vendidas somando os concorrentes.`}
       />
+      <PeriodoSelect meses={meses} />
 
       {oportunidades.length === 0 ? (
         <Card className="border-dashed">

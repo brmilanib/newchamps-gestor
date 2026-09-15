@@ -1,11 +1,14 @@
 import { getSessao } from "@/lib/data/sessao";
-import { getAnuncios } from "@/lib/data/concorrencia";
+import { getAnuncios, getMeses } from "@/lib/data/concorrencia";
 import { porCategoria } from "@/lib/domain/agregacao";
 import { PageHeader, Card, fmtBRL, fmtNum, fmtPct } from "@/components/ui";
+import { PeriodoSelect } from "@/components/PeriodoSelect";
 
-export default async function CategoriasPage() {
+export default async function CategoriasPage({ searchParams }: { searchParams: Promise<{ mes?: string }> }) {
+  const { mes } = await searchParams;
   const { organizationId } = await getSessao();
-  const anuncios = organizationId ? await getAnuncios(organizationId) : [];
+  const meses = organizationId ? await getMeses() : [];
+  const anuncios = organizationId ? await getAnuncios(organizationId, mes ?? meses[0]) : [];
   const cats = porCategoria(anuncios);
   const receitaTotal = cats.reduce((s, c) => s + c.receita, 0);
 
@@ -15,6 +18,7 @@ export default async function CategoriasPage() {
         titulo="Por Categoria"
         descricao="Os concorrentes de perfumaria não vendem só perfume — aqui você vê a distribuição por categoria (detectada automaticamente)."
       />
+      <PeriodoSelect meses={meses} />
 
       {cats.length === 0 ? (
         <Card className="border-dashed">

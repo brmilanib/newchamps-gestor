@@ -7,7 +7,18 @@ import type { AnuncioConcorrente, Categoria, SubcategoriaPerfumaria } from "@/li
  * domínio, pronto pras funções de agregação. Pagina de 1000 em 1000 (limite do
  * PostgREST) pra não perder linha com catálogos grandes (~4 mil anúncios).
  */
-export async function getAnuncios(orgId: string): Promise<AnuncioConcorrente[]> {
+/** Lista os meses (data_referencia) com dados de concorrência, do mais novo pro mais antigo. */
+export async function getMeses(): Promise<string[]> {
+  const supabase = await createClient();
+  const { data } = await supabase.rpc("meses_concorrencia");
+  return (data ?? []).map((r) => r.mes as string);
+}
+
+/**
+ * Anúncios de concorrente de um mês (data_referencia). Se `dataRef` não vier, usa o
+ * mês mais recente disponível. Retorna [] se não houver dados.
+ */
+export async function getAnuncios(orgId: string, dataRef?: string): Promise<AnuncioConcorrente[]> {
   const supabase = await createClient();
   const { data: comps } = await supabase
     .from("competitors")
@@ -15,6 +26,13 @@ export async function getAnuncios(orgId: string): Promise<AnuncioConcorrente[]> 
     .eq("organization_id", orgId);
   const nomePorId = new Map((comps ?? []).map((c) => [c.id, c.nome]));
   if (nomePorId.size === 0) return [];
+
+  let mes = dataRef;
+  if (!mes) {
+    const meses = await getMeses();
+    mes = meses[0];
+  }
+  if (!mes) return [];
 
   const ids = [...nomePorId.keys()];
   const pagina = 1000;
@@ -24,6 +42,7 @@ export async function getAnuncios(orgId: string): Promise<AnuncioConcorrente[]> 
       .from("competitor_listings")
       .select("*")
       .in("competitor_id", ids)
+      .eq("data_referencia", mes)
       .order("id", { ascending: true }) // ordenação estável: sem isso a paginação repete/pula linhas
       .range(from, from + pagina - 1);
     if (error) throw error;

@@ -1,18 +1,21 @@
 import { getSessao } from "@/lib/data/sessao";
-import { getAnuncios } from "@/lib/data/concorrencia";
+import { getAnuncios, getMeses } from "@/lib/data/concorrencia";
 import { consolidarGtin } from "@/lib/domain/agregacao";
 import { PageHeader, Card, Badge, fmtBRL, fmtNum } from "@/components/ui";
+import { PeriodoSelect } from "@/components/PeriodoSelect";
 
 const LIMITE = 250;
 
 export default async function GtinPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string; multi?: string }>;
+  searchParams: Promise<{ q?: string; multi?: string; mes?: string }>;
 }) {
-  const { q, multi } = await searchParams;
+  const { q, multi, mes } = await searchParams;
   const { organizationId } = await getSessao();
-  const anuncios = organizationId ? await getAnuncios(organizationId) : [];
+  const meses = organizationId ? await getMeses() : [];
+  const mesAtual = mes ?? meses[0];
+  const anuncios = organizationId ? await getAnuncios(organizationId, mesAtual) : [];
   const { grupos, totalGtinsUnicos, gtinsMultiConcorrente } = consolidarGtin(anuncios);
   const concs = [...new Set(anuncios.map((a) => a.concorrente))].sort();
 
@@ -47,7 +50,10 @@ export default async function GtinPage({
         descricao={`${fmtNum(totalGtinsUnicos)} produtos únicos consolidados por código de barras · ${fmtNum(gtinsMultiConcorrente)} vendidos por mais de um concorrente (dá pra comparar o mesmo produto físico).`}
       />
 
+      <PeriodoSelect meses={meses} />
+
       <form className="mb-4 flex flex-wrap items-center gap-3">
+        {mesAtual && <input type="hidden" name="mes" value={mesAtual} />}
         <input
           name="q"
           defaultValue={q ?? ""}
