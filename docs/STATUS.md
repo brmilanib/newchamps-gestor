@@ -15,6 +15,10 @@ _Atualizado em 2026-09-14 · Fase 1 em andamento (parte 2)._
   As telas de Concorrência batem com o Excel ao vivo: receita R$ 21.331.460, e o caso Nina Ricci
   (BAGATELLE R$412 × AUMA R$599, 45%, tamanho 50ml recuperado). **Critério de aceite da Fase 1 ✓.**
 - **Criar usuários** pela tela (Configurações → Usuários) — testado ao vivo.
+- **Filtro por mês** nas telas de Concorrência + gráfico de receita por concorrente.
+- **Estoque & Gestor Seller** no ar com seus dados: 643 SKUs, valor em estoque R$ 429.556,
+  ruptura e repor urgente com sugestão de compra, e **download do import__4_.xlsx** funcionando.
+  Estoque 15/09 + vendas dos últimos 30 dias carregados.
 
 
 ## ✅ Pronto nesta entrega (fundação + núcleo de dados)
