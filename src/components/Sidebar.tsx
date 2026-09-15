@@ -36,7 +36,7 @@ const GRUPOS: Grupo[] = [
     titulo: "Meu negócio",
     itens: [
       { href: "/meus-numeros", label: "Meus Números", icon: LineChart },
-      { href: "/estoque", label: "Estoque & Gestor Seller", icon: Package },
+      { href: "/estoque", label: "Estoque & Gestor Seller", icon: Package, pronto: true },
     ],
   },
   {

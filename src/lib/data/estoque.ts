@@ -48,26 +48,26 @@ export async function getEstoqueView(orgId: string): Promise<EstoqueView> {
   if (produtos.length === 0) {
     return { dataEstoque: null, itens: [], totalSkus: 0, valorEstoque: 0, emRuptura: 0, aRepor: 0 };
   }
-  const ids = produtos.map((p) => p.id);
+  // A RLS já limita snapshots e vendas à organização do usuário — não precisamos
+  // filtrar por lista de ids (que estouraria o tamanho da requisição).
 
   // Última data de estoque
   const { data: ult } = await supabase
     .from("own_stock_snapshots")
     .select("data_referencia")
-    .in("own_product_id", ids)
     .order("data_referencia", { ascending: false })
     .limit(1);
   const dataEstoque = ult?.[0]?.data_referencia ?? null;
 
   const snaps = dataEstoque
     ? await fetchAll<{ own_product_id: string; estoque_atual: number; custo_medio: number | null }>((from, to) =>
-        supabase.from("own_stock_snapshots").select("own_product_id, estoque_atual, custo_medio").eq("data_referencia", dataEstoque).in("own_product_id", ids).order("own_product_id", { ascending: true }).range(from, to),
+        supabase.from("own_stock_snapshots").select("own_product_id, estoque_atual, custo_medio").eq("data_referencia", dataEstoque).order("own_product_id", { ascending: true }).range(from, to),
       )
     : [];
   const estoquePorProd = new Map(snaps.map((s) => [s.own_product_id, s]));
 
   const vendas = await fetchAll<{ own_product_id: string | null; unidades: number }>((from, to) =>
-    supabase.from("own_sales_records").select("own_product_id, unidades").in("own_product_id", ids).order("own_product_id", { ascending: true }).range(from, to),
+    supabase.from("own_sales_records").select("own_product_id, unidades").order("own_product_id", { ascending: true }).range(from, to),
   );
   const unidPorProd = new Map<string, number>();
   for (const v of vendas) {
