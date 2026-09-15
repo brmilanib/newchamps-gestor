@@ -11,6 +11,10 @@ _Atualizado em 2026-09-14 · Fase 1 em andamento (parte 2)._
   proteção de rota (redireciona pro /login).
 - **Upload de concorrente** implementado (parse + ingestão + consolidação GTIN inline, idempotente).
 - 7 lojas cadastradas (Essence Prime, Purehome, Aurascent, Pure Perfumaria, Sillage, Kronix, Hubtoys).
+- **Dados reais carregados** (3 concorrentes + Nubmetrics): 3.988 anúncios, 2.142 GTINs, 100 marcas.
+  As telas de Concorrência batem com o Excel ao vivo: receita R$ 21.331.460, e o caso Nina Ricci
+  (BAGATELLE R$412 × AUMA R$599, 45%, tamanho 50ml recuperado). **Critério de aceite da Fase 1 ✓.**
+- **Criar usuários** pela tela (Configurações → Usuários) — testado ao vivo.
 
 
 ## ✅ Pronto nesta entrega (fundação + núcleo de dados)
