@@ -1,0 +1,215 @@
+{
+  "version": 2,
+  "skills": {
+    "analise-tributaria-regime": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/42-analise-tributaria-regime/SKILL.md",
+      "computedHash": "cfc71238d852e59b46f1faf607d89335903f147cc1018d7d9647303a69d6fdff"
+    },
+    "apuracao-lucro-presumido": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/02-apuracao-lucro-presumido/SKILL.md",
+      "computedHash": "6329465f056b336f8e8fac8775638111c1561e3a5ad22ff5c7478df1ff53600e"
+    },
+    "apuracao-lucro-real": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/03-apuracao-lucro-real/SKILL.md",
+      "computedHash": "ea961a0d936728fe85046fe73848c40659bb8df427dc8c8c5dcb61f37deed44f"
+    },
+    "apuracao-simples-nacional": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/01-apuracao-simples-nacional/SKILL.md",
+      "computedHash": "10c9b79665aa173762a626d0861137bd9870bdd5795ba82e836afe11eebfa51e"
+    },
+    "br-indirect-tax": {
+      "source": "openaccountants/openaccountants",
+      "commit": "2a8e283a9789fd93f0bf559271af495514320ad0",
+      "sourceType": "github",
+      "skillPath": "agent-skills/br-indirect-tax/SKILL.md",
+      "computedHash": "c4e7bad41c6229a2df51a0f1dd5d84a452055c9042ff8c6fb9f9472302f1c8db"
+    },
+    "br-municipal-taxes": {
+      "source": "openaccountants/openaccountants",
+      "commit": "2a8e283a9789fd93f0bf559271af495514320ad0",
+      "sourceType": "github",
+      "skillPath": "agent-skills/br-municipal-taxes/SKILL.md",
+      "computedHash": "bb7f54aa90e9c06bae57a830d3a5279d99b99452f6584ce722695d4d00d6ec15"
+    },
+    "br-simples-nacional": {
+      "source": "openaccountants/openaccountants",
+      "commit": "2a8e283a9789fd93f0bf559271af495514320ad0",
+      "sourceType": "github",
+      "skillPath": "agent-skills/br-simples-nacional/SKILL.md",
+      "computedHash": "5a0bd4da6b784d0d8c24d4a42668d36cc0e8b05a1502509b723b68b646a3406d"
+    },
+    "brazil-corporate-tax": {
+      "source": "openaccountants/openaccountants",
+      "commit": "2a8e283a9789fd93f0bf559271af495514320ad0",
+      "sourceType": "github",
+      "skillPath": "agent-skills/brazil-corporate-tax/SKILL.md",
+      "computedHash": "6ea3a4393978f510efdd3626b4c45d1b5d0822644a5c0980c180862f22cc0203"
+    },
+    "brazil-cross-border-tax": {
+      "source": "openaccountants/openaccountants",
+      "commit": "2a8e283a9789fd93f0bf559271af495514320ad0",
+      "sourceType": "github",
+      "skillPath": "agent-skills/brazil-cross-border-tax/SKILL.md",
+      "computedHash": "4fb0fe16c76885184d5bbd6c137cdf32db28f35e94eb2bd681aad2fb367b4742"
+    },
+    "brazil-einvoice": {
+      "source": "openaccountants/openaccountants",
+      "commit": "2a8e283a9789fd93f0bf559271af495514320ad0",
+      "sourceType": "github",
+      "skillPath": "agent-skills/brazil-einvoice/SKILL.md",
+      "computedHash": "914d75173a1bd2ec3f8cd66ad9ad89399a5dc01d73ab7a3c6929c0be7e13d40a"
+    },
+    "brazil-transfer-pricing": {
+      "source": "openaccountants/openaccountants",
+      "commit": "2a8e283a9789fd93f0bf559271af495514320ad0",
+      "sourceType": "github",
+      "skillPath": "agent-skills/brazil-transfer-pricing/SKILL.md",
+      "computedHash": "a884ce829279a4579548f71288d05754322e3a51f2e379bb5a9ab3a5b79df1ee"
+    },
+    "brazil-vat": {
+      "source": "openaccountants/openaccountants",
+      "commit": "2a8e283a9789fd93f0bf559271af495514320ad0",
+      "sourceType": "github",
+      "skillPath": "agent-skills/brazil-vat/SKILL.md",
+      "computedHash": "427cceb77c87515643595c27c9c8cca59cd00c429ec98aa0e8dd2d280593d904"
+    },
+    "calculo-icms-icms-st": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/05-calculo-icms-icms-st/SKILL.md",
+      "computedHash": "748ef12d7d1e029838577f2b3a670dc714afb334cac9f93568be853650b37bf1"
+    },
+    "calculo-ipi": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/06-calculo-ipi/SKILL.md",
+      "computedHash": "49d4a53f776ae6a3af7390c94f3430e1b5cdea4622d58fd9b70fef0f52f271a3"
+    },
+    "calculo-irpj-csll": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/10-calculo-irpj-csll/SKILL.md",
+      "computedHash": "ea65079dfdd9baf96d6cf770414a7095a5b805bb0f7ca8402154ba8dbd1baffc"
+    },
+    "calculo-pis-cofins-cumulativo": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/08-calculo-pis-cofins-cumulativo/SKILL.md",
+      "computedHash": "75ad8bc80a98482c11d4842b7a67089f3bd1646138d93495a2a07fa0c6957240"
+    },
+    "calculo-pis-cofins-nao-cumulativo": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/09-calculo-pis-cofins-nao-cumulativo/SKILL.md",
+      "computedHash": "2b5f82bf202b896a9d4e26da3068111577834a04f885f741fc074d0026f7b424"
+    },
+    "china-pit": {
+      "source": "openaccountants/openaccountants",
+      "commit": "2a8e283a9789fd93f0bf559271af495514320ad0",
+      "sourceType": "github",
+      "skillPath": "agent-skills/china-pit/SKILL.md",
+      "computedHash": "e16022ebd848c4b9c1f4f8c5af2cc7ad3d1a846d8678fed5747425302622d3b2"
+    },
+    "cross-border-ecommerce": {
+      "source": "nexscope-ai/ecommerce-skills",
+      "commit": "c5ba892a1cc3178626577aed1dbde5e62a82f1ac",
+      "sourceType": "github",
+      "skillPath": "cross-border-ecommerce/SKILL.md",
+      "computedHash": "d42a588deb7d1f8657772c6e8575aeeb635250380474f1a2b632c54cc664526e"
+    },
+    "customs-trade-compliance": {
+      "source": "affaan-m/ecc",
+      "commit": "4adeee6732a12d1540f49a4d50a38ce8c97f9a53",
+      "sourceType": "github",
+      "skillPath": "skills/customs-trade-compliance/SKILL.md",
+      "computedHash": "b831be00c00753f5390ebeb3d23d346fb0dbbec3cdfc2d65b730a3fc7bf2b071"
+    },
+    "dre-gerencial": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/39-dre-gerencial/SKILL.md",
+      "computedHash": "5472b7b11fda9ccc6fe2116e5afc68e6e787c0bbeaf31e979fcdf448ea8de9ad"
+    },
+    "dropshipping-product-research": {
+      "source": "nexscope-ai/ecommerce-skills",
+      "commit": "c5ba892a1cc3178626577aed1dbde5e62a82f1ac",
+      "sourceType": "github",
+      "skillPath": "dropshipping-product-research/SKILL.md",
+      "computedHash": "2aa4113470215aecf55e8e75c90a38009f62cb63aa2807d38b984b75d17fe39e"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "commit": "57217cf86ba38148a57af9e90d14a4c049558330",
+      "sourceType": "github",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "computedHash": "7bc223e2aafbdbf6e50ea243ba6ef67fe432bb069ab439fea0390795dac0bf7f"
+    },
+    "fluxo-caixa-projetado": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/40-fluxo-caixa-projetado/SKILL.md",
+      "computedHash": "e6cccdc72164b12e8ff23b38657d99214651f5fc8efae2245b27e051f91ac6e2"
+    },
+    "lancamentos-contabeis-padrao": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/32-lancamentos-contabeis-padrao/SKILL.md",
+      "computedHash": "4b1ebdf1b42321a18ef847aa0d0530b7743aa535766895a4013d6cd0f2256f6b"
+    },
+    "plano-contas-cpc": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/31-plano-contas-cpc/SKILL.md",
+      "computedHash": "137df2ad0af8560aff9e1bc00bf5cd7e0f89a539c296e7439e090a7cce0bd451"
+    },
+    "recuperacao-creditos-pis-cofins": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/43-recuperacao-creditos-pis-cofins/SKILL.md",
+      "computedHash": "93387f77e471840ec009d48271acef0c647f5841a63c5f3a8485c438b8f158a6"
+    },
+    "retencoes-tributarias-tomador": {
+      "source": "asv-digital/skills-contadores",
+      "commit": "14758967c11bf9423d1c96bfa8821759ded193ab",
+      "sourceType": "github",
+      "skillPath": "skills/13-retencoes-tributarias-tomador/SKILL.md",
+      "computedHash": "f03db8241bb488295b6e1a0dc0189e891fd3c6378f51c7680d6944e4c61a2f40"
+    },
+    "skill-planejamento-tributario": {
+      "source": "fabiospsanches/skill-planejamento-tributario",
+      "commit": "ba9ed492cd94c12144defb99d7defa86a9844531",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "c14e5e8b3d1f2c44d3f016bc63d1b5601257579a49e04faa45d4de0a637c0844"
+    },
+    "vat-accounting": {
+      "source": "kylin985ti/china-accounting-skills",
+      "commit": "9ace803b6fae661a1f391619fd161d249de1eaca",
+      "sourceType": "github",
+      "skillPath": "business/vat-accounting/SKILL.md",
+      "computedHash": "b853236cab84aced9203e054f7e6263a42302f773737391ca5e360eb3ba60fce"
+    }
+  }
+}
